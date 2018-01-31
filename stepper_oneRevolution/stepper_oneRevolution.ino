@@ -1,4 +1,4 @@
-
+  
 /*
  Stepper Motor Control - one revolution
 
@@ -27,6 +27,7 @@ const int wait = 2000; //in seconds
 Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
 
 void setup() {
+  pinMode(7, INPUT);
   // set the speed at 60 rpm:
   myStepper.setSpeed(120);
   // initialize the serial port:
@@ -34,10 +35,12 @@ void setup() {
 }
 
 void loop() {
+  if(digitalRead(7) == true){
   // step one revolution  in one direction:
-  Serial.println("clockwise");
-  myStepper.step(turns*stepsPerRevolution);
-  delay(2000);
+//    Serial.println("counterclockwise");
+    myStepper.step(-1);
+  }
+//  delay(2000);
 
   // step one revolution in the other direction:
 //  Serial.println("counterclockwise");
