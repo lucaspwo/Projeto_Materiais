@@ -33,26 +33,27 @@ void setup() {
 
 void loop() {
   if(digitalRead(0) == true){
-    flag = true;
+//    flag = true;
+    myStepper.step(1);
   }
   else if(digitalRead(0) == false){
-    flag = false;
+//    flag = false;
     digitalWrite(1,LOW);
     digitalWrite(2,LOW);
     digitalWrite(3,LOW);
     digitalWrite(4,LOW);
   }
-  while(flag == true){
-    // step one revolution  in one direction:
-    myStepper.step(-1);
-    if(digitalRead(0) == false){
-      flag = false;
-      digitalWrite(1,LOW);
-      digitalWrite(2,LOW);
-      digitalWrite(3,LOW);
-      digitalWrite(4,LOW);
-      break;
-    }
-  }
+//  while(flag == true){
+//    // step one revolution  in one direction:
+//    myStepper.step(-1);
+//    if(digitalRead(0) == false){
+//      flag = false;
+//      digitalWrite(1,LOW);
+//      digitalWrite(2,LOW);
+//      digitalWrite(3,LOW);
+//      digitalWrite(4,LOW);
+//      break;
+//    }
+//  }
 }
 
