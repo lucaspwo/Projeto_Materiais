@@ -54,7 +54,7 @@ void loop() {
   }
   while(flag == true){
     // step one revolution  in one direction:
-    myStepper.step(-1);
+    myStepper.step(1);
     if(digitalRead(BTN) == false){
       flag = false;
       stepperOFF();
